@@ -229,88 +229,98 @@
         }
 
         /* Services Section */
-        .services {
-            padding: 100px 0;
-            position: relative;
-        }
+.services {
+    padding: 100px 1rem; /* smaller side padding for mobiles */
+    position: relative;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-        .section-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, var(--neon-blue), var(--deep-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem; /* slightly smaller for mobiles */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, var(--neon-blue), var(--deep-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive for small screens */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
 
-        .service-card {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.service-card {
+    position: relative; /* needed for ::before gradient bar */
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-green), var(--deep-purple));
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-green), var(--deep-purple));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
 
-        .service-card:hover::before {
-            transform: translateX(0);
-        }
+.service-card:hover::before {
+    transform: translateX(0);
+}
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
-        }
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+}
 
-        .service-icon {
-            font-size: 3rem;
-            color: var(--neon-blue);
-            margin-bottom: 1rem;
-        }
+.service-icon {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+}
 
-        .service-card h3 {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
+.service-card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
 
-        .service-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+.service-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Optional: add some responsive tweaks */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .service-card {
+        padding: 1.5rem;
+    }
+    .service-icon {
+        font-size: 2.5rem;
+    }
+}
 
         /* About Section */
         .about {
