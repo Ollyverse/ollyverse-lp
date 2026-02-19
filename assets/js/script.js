@@ -111,8 +111,8 @@
   
    // Update Copyright Year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        
+  
+  
   
 //Load header and footer components
   async function loadComponent(id, file) {
