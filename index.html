@@ -31,13 +31,7 @@
 </head>
 
 
-<script>
-  fetch("components/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("header").innerHTML = html;
-    });
-</script> 
+
 <body>
 <!-- Background animation-->
  <div class="bg-particles"></div>
@@ -49,7 +43,7 @@
      
         <div class="nav-container">
 
-           <p>OLLYVERSE</p>
+           <p><img src="myicon2.jpg" alt="logo" id="logo"></p>
             <ul class="nav-links" id="navLinks">
               <center>
                 <li><a href="index.html">Home</a></li>
