@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ollyverse – 404 · Page Not Found</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #060606;
+      --teal:    #5ae0c8;
+      --white:   #ffffff;
+      --muted:   #888;
+      --dim:     #333;
+      --border:  #161616;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: #e2e2e2;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated grid background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(90,224,200,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90,224,200,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: olvGridDrift 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes olvGridDrift {
+      0%   { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    /* ── Radial glow ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(90,224,200,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Main layout ── */
+    #olv404Wrapper {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Minimal nav ── */
+    #olv404Nav {
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #olv404Logo {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    #olv404Logo span { color: var(--teal); }
+
+    #olv404NavLinks {
+      display: flex;
+      gap: 28px;
+    }
+
+    #olv404NavLinks a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    #olv404NavLinks a:hover { color: var(--white); }
+
+    /* ── Centre content ── */
+    #olv404Centre {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    /* ── Big 404 glitch number ── */
+    #olv404Code {
+      font-size: clamp(100px, 20vw, 180px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -6px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(90,224,200,0.2);
+      position: relative;
+      user-select: none;
+      animation: olvGlitch 6s infinite;
+    }
+
+    #olv404Code::before,
+    #olv404Code::after {
+      content: '404';
+      position: absolute;
+      inset: 0;
+      -webkit-text-stroke: 1px rgba(90,224,200,0.2);
+    }
+
+    #olv404Code::before {
+      color: rgba(90,224,200,0.06);
+      animation: olvGlitchBefore 6s infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    }
+
+    #olv404Code::after {
+      color: rgba(90,224,200,0.04);
+      animation: olvGlitchAfter 6s infinite;
+      clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    }
+
+    @keyframes olvGlitch {
+      0%, 90%, 100% { transform: translate(0); }
+      92%           { transform: translate(-2px, 1px); }
+      94%           { transform: translate(2px, -1px); }
+      96%           { transform: translate(-1px, 2px); }
+    }
+
+    @keyframes olvGlitchBefore {
+      0%, 90%, 100% { transform: translate(0); }
+      92%           { transform: translate(3px, 0); }
+      94%           { transform: translate(-3px, 0); }
+    }
+
+    @keyframes olvGlitchAfter {
+      0%, 90%, 100% { transform: translate(0); }
+      92%           { transform: translate(-3px, 0); }
+      94%           { transform: translate(3px, 0); }
+    }
+
+    /* ── Text content ── */
+    #olv404Eyebrow {
+      display: inline-block;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      padding: 5px 16px;
+      border: 1px solid rgba(90,224,200,0.15);
+      border-radius: 100px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(90,224,200,0.05);
+    }
+
+    #olv404Heading {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+    }
+
+    #olv404Sub {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    /* ── Action buttons ── */
+    #olv404Actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .olv404Btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .olv404Btn:hover { opacity: 0.8; }
+
+    .olv404Btn--primary {
+      background: var(--teal);
+      color: var(--bg);
+    }
+
+    .olv404Btn--secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .olv404Btn--secondary:hover { color: var(--white); border-color: #333; }
+
+    /* ── Quick links ── */
+    #olv404Links {
+      margin-top: 64px;
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 560px;
+    }
+
+    .olv404QuickLink {
+      padding: 14px 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--muted);
+      background: #0a0a0a;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .olv404QuickLink:hover {
+      border-color: rgba(90,224,200,0.2);
+      color: var(--white);
+      background: #0f0f0f;
+    }
+
+    .olv404QuickLink span:first-child {
+      font-size: 16px;
+    }
+
+    /* ── Footer strip ── */
+    #olv404Footer {
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    #olv404Footer p {
+      font-size: 13px;
+      color: #2e2e2e;
+    }
+
+    /* ── Countdown ── */
+    #olv404CountdownWrap {
+      font-size: 13px;
+      color: #2e2e2e;
+    }
+
+    #olv404CountdownWrap span { color: var(--teal); }
+
+    /* ── Responsive ── */
+    @media (max-width: 540px) {
+      #olv404Nav { padding: 20px 20px; }
+      #olv404NavLinks { gap: 16px; }
+      #olv404Footer { padding: 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="olv404Wrapper">
+
+  <!-- ── Minimal nav ── -->
+  <nav id="olv404Nav">
+    <a href="index.html" id="olv404Logo">OLLY<span>VERSE</span></a>
+    <div id="olv404NavLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── Main content ── -->
+  <main id="olv404Centre">
+
+    <div id="olv404Code">404</div>
+
+    <span id="olv404Eyebrow">Page Not Found</span>
+
+    <h1 id="olv404Heading">You've drifted off the map.</h1>
+
+    <p id="olv404Sub">
+      The page you're looking for doesn't exist, was moved, or took a wrong turn somewhere
+      in the digital ether. Let's get you back on track.
+    </p>
+
+    <div id="olv404Actions">
+      <a href="index.html" class="olv404Btn olv404Btn--primary">Back to Home</a>
+      <a href="contact.html" class="olv404Btn olv404Btn--secondary">Contact Us</a>
+    </div>
+
+
+
+  </main>
+
+  <!-- ── Footer strip ── -->
+  <footer id="olv404Footer">
+    <p>© Ollyverse Tech. All rights reserved.</p>
+    <div id="olv404CountdownWrap">
+      Redirecting to home in <span id="olv404Timer">10</span>s
+      &nbsp;·&nbsp;
+      <a href="#" id="olv404CancelRedirect" style="color: #3a3a3a; text-decoration: none; font-size: 13px;"
+         onmouseover="this.style.color='#5ae0c8'"
+         onmouseout="this.style.color='#3a3a3a'">Cancel</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Auto-redirect countdown
+  var countEl   = document.getElementById('olv404Timer');
+  var cancelBtn = document.getElementById('olv404CancelRedirect');
+  var seconds   = 10;
+  var timer     = null;
+  var cancelled = false;
+
+  function tick() {
+    if (cancelled) return;
+    seconds -= 1;
+    if (countEl) countEl.textContent = seconds;
+    if (seconds <= 0) {
+      window.location.href = 'index.html';
+    }
+  }
+
+  timer = setInterval(tick, 1000);
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      cancelled = true;
+      clearInterval(timer);
+      var wrap = document.getElementById('olv404CountdownWrap');
+      if (wrap) {
+        wrap.style.transition = 'opacity 0.3s ease';
+        wrap.style.opacity = '0';
+        setTimeout(function () { wrap.style.display = 'none'; }, 300);
+      }
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>

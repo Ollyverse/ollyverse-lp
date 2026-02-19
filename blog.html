@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ollyverse – Posts on X</title>
+
+  <style>
+  
+    body { background: #060606; font-family: 'Segoe UI', sans-serif; color: #e2e2e2; }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<!-- footer fetch -->
+<script src="https://elfsightcdn.com/platform.js" defer></script>
+<script>
+  fetch("components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+</script>
+<body>
+
+
+<div id="blog-page-content" style="
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #e2e2e2;
+  line-height: 1.75;
+">
+
+  <!-- ── PAGE HERO ─────────────────────────────────────────── -->
+  <div style="
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    border-bottom: 1px solid #1e1e1e;
+    padding-bottom: 48px;
+    margin-bottom: 60px;
+  ">
+    <div>
+      <p style="
+        font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+        color: #5ae0c8; margin-bottom: 18px; font-weight: 600;
+      ">Insights &amp; Ideas</p>
+      <h1 style="
+        font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700;
+        color: #fff; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px;
+      ">The Ollyverse Blog - X (Twitter)</h1>
+      <p style="font-size: 16px; color: #888; max-width: 520px;">
+        Thoughts on AI, software engineering, product design, and building technology
+        that actually matters. Written by the team at Ollyverse.
+      </p>
+    </div>
+
+<!-- Elfsight Twitter Feed | Untitled Twitter Feed -->
+
+<div class="elfsight-app-358ead4a-8bf3-4a5c-816b-94934fe35db2" data-elfsight-app-lazy></div>
+
+
+
+  <!-- ── NEWSLETTER STRIP ───────────────────────────────────── -->
+<!--   <div style="
+    margin-top: 72px;
+    padding: 48px 40px;
+    border: 1px solid #1a1a1a;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.015);
+    text-align: center;
+  ">
+    <p style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #5ae0c8; margin-bottom: 14px; font-weight: 600;">Stay Sharp</p>
+    <h3 style="font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: -0.3px;">
+      Get new posts delivered to your inbox.
+    </h3>
+    <p style="font-size: 14px; color: #555; margin-bottom: 32px; max-width: 400px; margin-left: auto; margin-right: auto;">
+      No spam. Just thoughtful writing on AI, product, and building great software —
+      whenever we publish.
+    </p>
+    <!-- Subscriber form -->
+<!--     <div style="
+      display: flex; gap: 10px; max-width: 440px;
+      margin: 0 auto; flex-wrap: wrap; justify-content: center;
+    ">
+      <input
+        id="olvBlogEmailInput"
+        type="email"
+        placeholder="your@email.com"
+        style="
+          flex: 1; min-width: 200px;
+          padding: 13px 18px;
+          border-radius: 8px;
+          border: 1px solid #1e1e1e;
+          background: #0a0a0a;
+          color: #e2e2e2;
+          font-size: 14px;
+          outline: none;
+          font-family: inherit;
+          transition: border-color 0.2s ease;
+        "
+        onfocus="this.style.borderColor='rgba(90,224,200,0.35)'"
+        onblur="this.style.borderColor='#1e1e1e'"
+      />
+      <button
+        id="olvBlogSubscribeBtn"
+        style="
+          padding: 13px 24px;
+          background: #5ae0c8; color: #060606;
+          font-weight: 700; font-size: 14px;
+          border-radius: 8px; border: none;
+          cursor: pointer; white-space: nowrap;
+          transition: opacity 0.2s ease;
+          font-family: inherit;
+        "
+        onmouseover="this.style.opacity='0.85'"
+        onmouseout="this.style.opacity='1'"
+      >Subscribe</button>
+    </div>
+    <p id="olvBlogSubFeedback" style="
+      margin-top: 14px; font-size: 13px; color: transparent; height: 18px;
+      transition: color 0.3s ease;
+    ">Thanks! You're on the list.</p>
+  </div> -->
+
+
+
+
+<!-- Footer -->
+<div id="footer" style="width: 100%;"></div>
+<br><br><br>
+      
+      
+        <div class="container">
+     <div class="copyright">
+                <p>&copy; <span id="currentYear"></span></span> Ollyverse Tech. All rights reserved.</p>
+            </div>
+            
+           </footer>
+    <script src="assets/js/script.js"></script>
+  <script>   // Update Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        
+        
+        
+        </script>  
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Entry animation
+  var cards = document.querySelectorAll('[data-olv-blog-card]');
+  cards.forEach(function (card, i) {
+    card.style.opacity   = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease, border-color 0.25s ease';
+    setTimeout(function () {
+      card.style.opacity   = '1';
+      card.style.transform = 'translateY(0)';
+    }, 80 + i * 80);
+  });
+
+  // ── Category filter
+  var filterBtns = document.querySelectorAll('[data-olv-blog-filter]');
+  var emptyState = document.getElementById('olvBlogEmpty');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+
+      filterBtns.forEach(function (b) {
+        b.style.background  = 'transparent';
+        b.style.color       = '#888';
+        b.style.borderColor = '#1e1e1e';
+      });
+      btn.style.background  = '#5ae0c8';
+      btn.style.color       = '#060606';
+      btn.style.borderColor = '#5ae0c8';
+
+      var active  = btn.getAttribute('data-olv-blog-filter');
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var cat  = card.getAttribute('data-olv-blog-category');
+        var show = (active === 'all' || cat === active);
+
+        if (show) {
+          card.style.display = 'flex';
+          visible++;
+          setTimeout(function () {
+            card.style.opacity   = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          card.style.opacity   = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(function () {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+
+      // Show/hide empty state
+      if (emptyState) {
+        setTimeout(function () {
+          emptyState.style.display = visible === 0 ? 'block' : 'none';
+        }, 320);
+      }
+    });
+  });
+
+  // ── Newsletter subscribe UX
+  var subBtn      = document.getElementById('olvBlogSubscribeBtn');
+  var emailInput  = document.getElementById('olvBlogEmailInput');
+  var subFeedback = document.getElementById('olvBlogSubFeedback');
+
+  if (subBtn && emailInput && subFeedback) {
+    subBtn.addEventListener('click', function () {
+      var email = emailInput.value.trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!valid) {
+        subFeedback.style.color = '#e05a5a';
+        subFeedback.textContent = 'Please enter a valid email address.';
+        emailInput.style.borderColor = 'rgba(224,90,90,0.4)';
+        return;
+      }
+
+      // ── Replace with your actual form submission / API call ──
+      subBtn.textContent      = 'Subscribed ✓';
+      subBtn.style.background = 'rgba(90,224,200,0.15)';
+      subBtn.style.color      = '#5ae0c8';
+      subBtn.style.border     = '1px solid rgba(90,224,200,0.2)';
+      subBtn.disabled         = true;
+      emailInput.disabled     = true;
+      emailInput.style.opacity = '0.4';
+
+      subFeedback.style.color = '#5ae0c8';
+      subFeedback.textContent = 'You\'re on the list. Expect great reads soon.';
+    });
+
+    emailInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') subBtn.click();
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>
