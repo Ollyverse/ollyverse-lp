@@ -122,14 +122,119 @@ loadComponent("footer", "components/footer.html");</script>
   
   
 
-  <div style="border: 2px solid #9B5CFF; border-radius: 10px; padding: 25px; max-width: 600px; margin: 0 auto;">
-    <h3 style="color: #9B5CFF; font-size: 20px;">CURRENTLY, THERE ARE NO OPEN POSITIONS.</h3>
-    <p style="margin-top: 15px;">
-      We appreciate your interest. Please check back later — available opportunities will be posted here as they arise.<br>
-      <strong>Thank you for considering Ollyverse.</strong>
+<div style="border: 2px solid #9B5CFF; border-radius: 10px; padding: 25px; max-width: 600px; margin: 0 auto;">
+  <h3 style="color: #9B5CFF; font-size: 20px;">WE'RE HIRING!</h3>
+  <p style="margin-top: 5px; margin-bottom: 20px;">
+    Join the Ollyverse team! We're looking for talented individuals to grow with us.
+    <br><strong>Apply below for the role that fits you.</strong>
+  </p>
+
+  <style>
+  .olv-jobs-section {
+    margin: 40px 0;
+  }
+
+  .olv-job-card {
+    background: #0f0f0f;
+    border: 1px solid #161616;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .olv-job-card:hover {
+    border-color: #1a6b3c;
+    box-shadow: 0 0 0 1px rgba(26,107,60,0.3);
+  }
+
+  .olv-job-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .olv-badge {
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba(26,107,60,0.15);
+    color: #1a6b3c;
+    border: 1px solid #1a6b3c;
+    border-radius: 50px;
+    padding: 4px 12px;
+  }
+
+  .olv-job-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+  }
+
+  .olv-btn {
+    display: inline-block;
+    background: #1a6b3c;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .olv-btn:hover {
+    background: #14552f;
+    transform: translateY(-2px);
+  }
+
+  .olv-job-footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #6e6e6e;
+    text-align: center;
+  }
+</style>
+
+<div class="olv-jobs-section">
+
+  <!-- Product Manager -->
+  <div class="olv-job-card">
+    <h4 class="olv-job-title">
+      Product Manager
+      <span class="olv-badge">1 Opening</span>
+    </h4>
+    <p class="olv-job-desc">
+      We're seeking a product manager to lead strategy, roadmap, and cross-functional collaboration at Ollyverse.
     </p>
+    <a href="https://forms.gle/jEk3rufA8mMbEKi86" target="_blank" class="olv-btn">
+      Apply Now →
+    </a>
   </div>
-</section>
+
+  <!-- Frontend Developer -->
+  <div class="olv-job-card">
+    <h4 class="olv-job-title">
+      Frontend Developer
+      <span class="olv-badge">2 Openings</span>
+    </h4>
+    <p class="olv-job-desc">
+      We're looking for a frontend developer to build responsive, high-performance interfaces and elevate user experience across Ollyverse products.
+    </p>
+    <a href="https://forms.gle/UL4byxesjLmm7Thp8" target="_blank" class="olv-btn">
+      Apply Now →
+    </a>
+  </div>
+
+  <p class="olv-job-footer">
+    Thank you for your interest in Ollyverse. We look forward to hearing from you!
+  </p>
+
+</div></div>
 
 <div id="footer"></div>
 <br><br><br>
@@ -151,6 +256,6 @@ loadComponent("footer", "components/footer.html");</script>
         </script>  
 
 
-<script src="pnf.js"></script>
+<script src="nf.js"></script>
 </body>
 </html>
